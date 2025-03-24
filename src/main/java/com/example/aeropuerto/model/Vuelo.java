@@ -12,11 +12,14 @@ public class Vuelo {
     private String destino;
 
     @ManyToOne
-    @JoinColumn(name = "aeropuerto_id")
-    private Aeropuerto aeropuerto;
+    @JoinColumn(name = "avion_id")
+    private Avion avion;
 
-    @ManyToMany(mappedBy = "vuelos")
-    private List<Avion> aviones;
+    @ManyToOne
+    @JoinColumn(name = "origen_id")
+    private Aeropuerto aeropuertoOrigen;
 
-    // Getters y Setters
+    @ManyToOne
+    @JoinColumn(name = "destino_id")
+    private Aeropuerto aeropuertoDestino;
 }

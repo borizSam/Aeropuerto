@@ -12,8 +12,10 @@ public class Aeropuerto {
     private String nombre;
     private String ciudad;
 
-    @OneToMany(mappedBy = "aeropuerto")
-    @JsonIgnore // Evitar ATACK OF tITANS
-    private List<Vuelo> vuelos;
+    @OneToMany(mappedBy = "aeropuertoOrigen")
+    private List<Vuelo> vuelosOrigen;
+
+    @OneToMany(mappedBy = "aeropuertoDestino")
+    private List<Vuelo> vuelosDestino;
 
 }

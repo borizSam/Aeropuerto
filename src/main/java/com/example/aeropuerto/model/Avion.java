@@ -11,12 +11,7 @@ public class Avion {
     private String modelo;
     private int capacidad;
 
-    @ManyToMany
-    @JoinTable(
-            name = "AVION-VUELO-JoinTable",
-            joinColumns = @JoinColumn(name = "avion_id"),
-            inverseJoinColumns = @JoinColumn(name = "vuelo_id")
-    )
+    @OneToMany(mappedBy = "avion")
     private List<Vuelo> vuelos;
 
     // Getters y Setters
