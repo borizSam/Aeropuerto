@@ -3,6 +3,7 @@ package com.example.aeropuerto.controller;
 import com.example.aeropuerto.model.Avion;
 import com.example.aeropuerto.repository.AvionRepository;
 import com.example.aeropuerto.service.AvionService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +30,7 @@ public class AvionController {
 
     @PostMapping
     public Avion create(@RequestBody Avion avion) {
+
         return avionService.saveAvion(avion);
     }
 
