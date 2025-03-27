@@ -28,10 +28,11 @@ public class AvionController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public Avion create(@RequestBody Avion avion) {
+    @PostMapping("/createAvion")
+    public List <Avion> create(@RequestBody List<Avion> aviones) {
 
-        return avionService.saveAvion(avion);
+        avionService.saveAvion(aviones);
+        return aviones;
     }
 
     @DeleteMapping("/{id}")

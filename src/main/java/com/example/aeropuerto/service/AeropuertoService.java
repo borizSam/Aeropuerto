@@ -17,12 +17,15 @@ public class AeropuertoService {
     private AeropuertoRepository aeropuertoRepository;
 
     public List<Aeropuerto> getAllAeropuertos(){
+
         return aeropuertoRepository.findAll();
     }
     public Optional<Aeropuerto> getAeropuertoById(Long id){
+
         return aeropuertoRepository.findById(id);
     }
     public Aeropuerto saveAeropuerto(Aeropuerto aeropuerto){
+
         return aeropuertoRepository.save(aeropuerto);
     }
     public void deleteAeropuerto(Long id){

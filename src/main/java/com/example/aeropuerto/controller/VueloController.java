@@ -30,6 +30,7 @@ public class VueloController {
     }
     @PostMapping
     public Vuelo create(@RequestBody Vuelo vuelo){
+
         return vueloService.saveVuelo(vuelo);
     }
 

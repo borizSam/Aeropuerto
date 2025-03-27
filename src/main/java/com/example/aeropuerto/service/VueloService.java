@@ -16,6 +16,7 @@ public class VueloService {
     private VueloRepository vueloRepository;
 
     public List<Vuelo> getAllVuelos(){
+
         return vueloRepository.findAll();
     }
 
@@ -24,6 +25,7 @@ public class VueloService {
 
     }
     public Vuelo saveVuelo(Vuelo vuelo){
+
         return vueloRepository.save(vuelo);
     }
     public void deleteVuelo(Long id){

@@ -25,4 +25,73 @@ public class Vuelo {
     @ManyToOne
     @JoinColumn(name = "destino_id")
     private Aeropuerto aeropuertoDestino;
+
+    public Vuelo() {
+    }
+
+    public Vuelo(Long id, String destino, LocalDateTime fechaSalida, LocalDateTime fechaLlegada, Avion avion, Aeropuerto aeropuertoOrigen, Aeropuerto aeropuertoDestino) {
+        this.id = id;
+        this.destino = destino;
+        this.fechaSalida = fechaSalida;
+        this.fechaLlegada = fechaLlegada;
+        this.avion = avion;
+        this.aeropuertoOrigen = aeropuertoOrigen;
+        this.aeropuertoDestino = aeropuertoDestino;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getFechaLlegada() {
+        return fechaLlegada;
+    }
+
+    public void setFechaLlegada(LocalDateTime fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
+    }
+
+    public LocalDateTime getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(LocalDateTime fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public Avion getAvion() {
+        return avion;
+    }
+
+    public void setAvion(Avion avion) {
+        this.avion = avion;
+    }
+
+    public Aeropuerto getAeropuertoOrigen() {
+        return aeropuertoOrigen;
+    }
+
+    public void setAeropuertoOrigen(Aeropuerto aeropuertoOrigen) {
+        this.aeropuertoOrigen = aeropuertoOrigen;
+    }
+
+    public Aeropuerto getAeropuertoDestino() {
+        return aeropuertoDestino;
+    }
+
+    public void setAeropuertoDestino(Aeropuerto aeropuertoDestino) {
+        this.aeropuertoDestino = aeropuertoDestino;
+    }
 }
