@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/aviones")
 public class AvionController {
+
     @Autowired
     private AvionService avionService;
 
@@ -28,11 +30,9 @@ public class AvionController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/createAvion")
-    public List <Avion> create(@RequestBody List<Avion> aviones) {
-
-        avionService.saveAvion(aviones);
-        return aviones;
+    @PostMapping
+    public List<Avion> create(@RequestBody List<Avion> aviones) {
+        return avionService.saveAvion(aviones);
     }
 
     @DeleteMapping("/{id}")

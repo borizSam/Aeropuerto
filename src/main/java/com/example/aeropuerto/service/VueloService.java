@@ -15,23 +15,19 @@ public class VueloService {
     @Autowired
     private VueloRepository vueloRepository;
 
-    public List<Vuelo> getAllVuelos(){
-
+    public List<Vuelo> getAllVuelos() {
         return vueloRepository.findAll();
     }
 
-    public Optional<Vuelo> getVueloById(Long id){
+    public Optional<Vuelo> getVueloById(Long id) {
         return vueloRepository.findById(id);
-
     }
-    public Vuelo saveVuelo(Vuelo vuelo){
 
+    public Vuelo saveVuelo(Vuelo vuelo) {
         return vueloRepository.save(vuelo);
     }
-    public void deleteVuelo(Long id){
+
+    public void deleteVuelo(Long id) {
         vueloRepository.deleteById(id);
     }
-
-
-
 }

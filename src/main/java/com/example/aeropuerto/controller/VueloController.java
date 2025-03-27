@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173") // React
 @RestController
-@RequestMapping("api/vuelos")
-
+@RequestMapping("/api/vuelos")
 public class VueloController {
+
     @Autowired
     private VueloService vueloService;
 
@@ -22,22 +23,20 @@ public class VueloController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Vuelo> getById(@PathVariable Long id){
+    public ResponseEntity<Vuelo> getById(@PathVariable Long id) {
         return vueloService.getVueloById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
-
     }
-    @PostMapping
-    public Vuelo create(@RequestBody Vuelo vuelo){
 
+    @PostMapping
+    public Vuelo create(@RequestBody Vuelo vuelo) {
         return vueloService.saveVuelo(vuelo);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         vueloService.deleteVuelo(id);
         return ResponseEntity.noContent().build();
-
     }
 }

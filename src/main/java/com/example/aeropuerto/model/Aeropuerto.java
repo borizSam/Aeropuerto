@@ -9,15 +9,16 @@ public class Aeropuerto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private String ciudad;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "aeropuertoOrigen")
+    @JsonIgnore
     private List<Vuelo> vuelosOrigen;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "aeropuertoDestino")
+    @JsonIgnore
     private List<Vuelo> vuelosDestino;
 
     public Aeropuerto() {
@@ -30,6 +31,7 @@ public class Aeropuerto {
         this.vuelosOrigen = vuelosOrigen;
         this.vuelosDestino = vuelosDestino;
     }
+    //GetSett
 
     public Long getId() {
         return id;

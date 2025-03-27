@@ -10,6 +10,7 @@ public class Vuelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String destino;
     private LocalDateTime fechaSalida;
     private LocalDateTime fechaLlegada;
@@ -47,12 +48,12 @@ public class Vuelo {
         this.id = id;
     }
 
-    public LocalDateTime getFechaLlegada() {
-        return fechaLlegada;
+    public String getDestino() {
+        return destino;
     }
 
-    public void setFechaLlegada(LocalDateTime fechaLlegada) {
-        this.fechaLlegada = fechaLlegada;
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
     public LocalDateTime getFechaSalida() {
@@ -63,12 +64,12 @@ public class Vuelo {
         this.fechaSalida = fechaSalida;
     }
 
-    public String getDestino() {
-        return destino;
+    public LocalDateTime getFechaLlegada() {
+        return fechaLlegada;
     }
 
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public void setFechaLlegada(LocalDateTime fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
     }
 
     public Avion getAvion() {

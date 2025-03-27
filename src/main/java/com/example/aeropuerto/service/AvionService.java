@@ -15,17 +15,14 @@ public class AvionService {
     private AvionRepository avionRepository;
 
     public List<Avion> getAllAviones() {
-
         return avionRepository.findAll();
     }
 
     public Optional<Avion> getAvionById(Long id) {
-
         return avionRepository.findById(id);
     }
 
     public List<Avion> saveAvion(List<Avion> aviones) {
-
         return avionRepository.saveAll(aviones);
     }
 

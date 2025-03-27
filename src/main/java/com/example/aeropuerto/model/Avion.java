@@ -1,5 +1,7 @@
 package com.example.aeropuerto.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -8,15 +10,17 @@ public class Avion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String modelo;
     private int capacidad;
 
     @OneToMany(mappedBy = "avion")
+    @JsonIgnore
     private List<Vuelo> vuelos;
 
-    // Getters y Setters
     public Avion() {
     }
+
     public Avion(Long id, String modelo, int capacidad, List<Vuelo> vuelos) {
         this.id = id;
         this.modelo = modelo;
