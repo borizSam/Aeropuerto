@@ -1,5 +1,6 @@
 package com.example.aeropuerto.controller;
 
+import com.example.aeropuerto.dto.AeropuertoDTO;
 import com.example.aeropuerto.model.Aeropuerto;
 import com.example.aeropuerto.repository.AeropuertoRepository;
 import com.example.aeropuerto.service.AeropuertoService;
@@ -22,6 +23,7 @@ public class AeropuertoController {
 
     @GetMapping
     public List<Aeropuerto> getAll() {
+
         return aeropuertoService.getAllAeropuertos();
     }
 
@@ -33,7 +35,10 @@ public class AeropuertoController {
     }
 
     @PostMapping
-    public Aeropuerto create(@RequestBody Aeropuerto aeropuerto) {
+    public Aeropuerto create(@RequestBody AeropuertoDTO dto) {
+        Aeropuerto aeropuerto = new Aeropuerto();
+        aeropuerto.setNombre(dto.getNombre());
+        aeropuerto.setCiudad(dto.getCiudad());
         return aeropuertoService.saveAeropuerto(aeropuerto);
     }
 
@@ -42,4 +47,5 @@ public class AeropuertoController {
         aeropuertoService.deleteAeropuerto(id);
         return ResponseEntity.noContent().build();
     }
+
 }

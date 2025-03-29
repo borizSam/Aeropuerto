@@ -22,6 +22,11 @@ public class AvionService {
         return avionRepository.findById(id);
     }
 
+    public Avion saveAvion(Avion avion) {
+        return avionRepository.save(avion);
+    }
+
+    // Por si quiero guardar varios aviones
     public List<Avion> saveAvion(List<Avion> aviones) {
         return avionRepository.saveAll(aviones);
     }

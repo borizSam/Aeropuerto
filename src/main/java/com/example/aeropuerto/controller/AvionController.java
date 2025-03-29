@@ -1,5 +1,6 @@
 package com.example.aeropuerto.controller;
 
+import com.example.aeropuerto.dto.AvionDTO;
 import com.example.aeropuerto.model.Avion;
 import com.example.aeropuerto.repository.AvionRepository;
 import com.example.aeropuerto.service.AvionService;
@@ -20,6 +21,7 @@ public class AvionController {
 
     @GetMapping
     public List<Avion> getAll() {
+
         return avionService.getAllAviones();
     }
 
@@ -31,9 +33,13 @@ public class AvionController {
     }
 
     @PostMapping
-    public List<Avion> create(@RequestBody List<Avion> aviones) {
-        return avionService.saveAvion(aviones);
+    public Avion create(@RequestBody AvionDTO dto) {
+        Avion avion = new Avion();
+        avion.setModelo(dto.getModelo());
+        avion.setCapacidad(dto.getCapacidad());
+        return avionService.saveAvion(avion);
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
