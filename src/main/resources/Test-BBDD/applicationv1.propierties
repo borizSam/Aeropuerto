@@ -18,3 +18,11 @@ spring.jpa.hibernate.ddl-auto=create
 spring.sql.init.mode=always
 
 spring.jpa.defer-datasource-initialization=true
+*****
+spring.datasource.url=jdbc:postgresql://ep-twilight-brook-a257okut-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require
+spring.datasource.username=neondb_owner
+spring.datasource.password=npg_WKLVw01oBsun
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
